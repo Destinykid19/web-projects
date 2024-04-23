@@ -6,6 +6,15 @@
     scroll-behavior: smooth;
 }
 
+
+/* .audio_play {
+    display:  flex;
+    height: 2vh;
+    width: 100%;
+    position: sticky left;
+
+} */
+
 .navbar {
     background-color: #131313 ;
     height: 80px;
@@ -141,7 +150,6 @@
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
         background: #fff;
-
     }
 
     .navbar__item {
@@ -351,7 +359,6 @@
     background: #ff1ead;
     transition: all 0.35s;
     border-radius: 4px;
-
 }
 
 .main__button:hover {
@@ -493,22 +500,38 @@
 }
 
 .services__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    display:flex;
+    height: 20rem;
+    gap: 1rem;
+}
+
+.services__wrapper > div{
+    flex: 1;
+    border-radius: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    transition: all .08 cubic-bezier(.25, .4, .45, .1.4);
+}
+
+.services__wrapper > div:hover {
+    flex: 5;
 }
 
 .services__card {
-    margin:  10px;
-    height: 425px;
-    width: 300px;
+    /* margin:  10px; */
+    gap: 1rem;
+    height: 100% ;
+    width: 80%;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: #fff;
+    overflow: hidden;
     background-image: linear-gradient(to right, #00dbde, #fc00ff 100%);
     transition: 00.3s ease-in;
+    
 }
 
 .services__card:nth-child(2){
@@ -567,13 +590,14 @@
 
 @media screen and (max-width :1300px) {
     .services__wrapper {
-        grid-template-columns:  1fr 1fr;
+        flex-direction: row;
     }
 }
 
 @media screen and (max-width: 768px) {
     .services__wrapper {
-        grid-template-columns:  1fr;
+
+        flex-direction: column;
     }
 }
 
